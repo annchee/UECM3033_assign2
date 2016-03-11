@@ -10,7 +10,7 @@ UECM3033 Assignment #2 Report
 
 The reports, codes and supporting documents are to be uploaded to Github at: 
 
-[https://github.com/annchee/UECM3033_assign1]
+[https://github.com/annchee/UECM3033_assign2](https://github.com/annchee/UECM3033_assign2)
 
 Explain your selection criteria here.
 Check matrix A is strictly diagonally dominant Matrix. If the result is true, then solve by LU. 
