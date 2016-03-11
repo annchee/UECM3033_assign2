@@ -32,7 +32,7 @@ Put here your picture file (tohoshinki.jpg)
 
 How many non zero element in $\Sigma$?
 
-$(N \times M-N)$ is used to solve the number of zeros in $\Sigma$ for $M\times N$ size of an image. 
+$(N \times M-N)$ is used to solve the number of zeros in $\sum_{}$ for $M\times N$ size of an image. 
 
 Put here your lower and better resolution pictures. Explain how you generate
 these pictures from `task2.py`.
@@ -43,12 +43,11 @@ The lower resolution picture
 The better resolution picture
 ![Tohoshinki_better.jpg](Tohoshinki_better.jpg)
 
-A new $\Sigma_i$ with $i$ number of eigenvector used, 30 for lower resolution and 200 for better resolution. Then calculate the matrix by U $\Sigma_i$ V for each color layer. Thus, combine together to become an image in RGB format.
+A new $\Sigma_{i}$ with $i$ number of eigenvector used, 30 for lower resolution and 200 for better resolution. Then calculate the matrix by U $\Sigma_{i}$ V for each color layer. Thus, combine the layer together to become an image in RGB format.
 
 What is a sparse matrix?
 
-The sparse matrix is a matrix in which most of the elements are zero. $\Sigma_i$ is the example
-of sparse matrix which contain only $i$ non-zero element out of $N\times M$ element.
+The sparse matrix is a matrix in which most of the elements are zero. $\Sigma_{i}$ is the example of sparse matrix which contain only $i$ non-zero element out of $N\times M$ element.
 
 -----------------------------------
 
