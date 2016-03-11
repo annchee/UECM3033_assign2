@@ -10,11 +10,7 @@ UECM3033 Assignment #2 Report
 
 The reports, codes and supporting documents are to be uploaded to Github at: 
 
-<<<<<<< HEAD
 [https://github.com/annchee/UECM3033_assign2]
-=======
-[https://github.com/annchee/UECM3033_assign2](https://github.com/annchee/UECM3033_assign2)
->>>>>>> origin/master
 
 Explain your selection criteria here.
 Check strictly diagonally matrix. If the matrix A is strictly diagonally
