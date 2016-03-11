@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 11 15:05:11 2016
-
-@author: utar
-"""
-
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
@@ -24,35 +17,40 @@ ax3.imshow(g, cmap = 'Greens')
 ax4.imshow(b, cmap = 'Blues')
 plt.show()
 
-[r2,g2,b2]=[img[:,:,i]for i in range((3))]
-red={'Index':0,'Mat': r2,'Color' : 'Reds' }
-green={'Index':1,'Mat': g2,'Color' : 'Greens'}
-blue={'Index':2,'Mat': b2,'Color' : 'Blues'}
+[r2,g2,b2]=[img[:,:,i]for i in range(3)]
+red={'Index':0,'Mat': r2,'Color' : 'Reds', 'img':'Red'}
+green={'Index':1,'Mat': g2,'Color' : 'Greens','img':'Green'}
+blue={'Index':2,'Mat': b2,'Color' : 'Blues','img':'Blue'}
 rgb=[red,green,blue]
 
 for color in rgb:
     plt.imshow(color['Mat'],cmap=color['Color'])
+    plt.imsave(color['img'], NewImg)
     plt.show()
+    
+    #Single Value Decomposition of img
     U,s,V=la.svd(color['Mat'])
     S=np.zeros(color['Mat'].shape,s.dtype)
+    
     for i in range(s.size):
         S[i][i]=s[i]
-        color['U']=U
-        color['eigenval']=s
-        color['S']=S
-        color['V']=V
+    color['U']=U
+    color['eigenvalues']=s
+    color['S']=S
+    color['V']=V
+    
     NewImg=np.zeros_like(img)
     for dimension in (30,200):
         for color in rgb:
             New_S=np.zeros(color['Mat'].shape,s.dtype)
             for i in range (dimension):
-                New_S[i][i]=color['eigenval'][i]
-                NewImg[:,:,color['Index']]=np.dot(np.dot(color['U']))
-            plt.imshow(NewImg)
-            if(dimension==30):
-                plt.imsave('Tohoshinki_lower.jpg',NewImg)
-            if(dimension==200):
-                plt.imsave('Tohoshinki_better.jpg',NewImg)
-            plt.show()
+                New_S[i][i]=color['eigenvalues'][i]
+            NewImg[:,:,color['Index']]=np.dot(np.dot(color['U'],New_S),color['V'])
+        plt.imshow(NewImg)
+    if(dimension==30):
+       plt.imsave('Tohoshinki_lower.jpg',NewImg)
+    if(dimension==200):
+       plt.imsave('Tohoshinki_better.jpg',NewImg)
+    plt.show()
     
     
